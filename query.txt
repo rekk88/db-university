@@ -4,3 +4,15 @@ FROM `students`
 WHERE YEAR(`date_of_birth`) = '1990';
 
 ---------------------- 2 ------------------
+SELECT * 
+FROM `courses`
+WHERE `cfu` > 10;
+---------------------- 3 ------------------
+SELECT * 
+FROM `students`
+WHERE YEAR(CURRENT_TIMESTAMP()) - YEAR(`date_of_birth`) > 30  --niente così non se pò fà
+ORDER BY `students`.`id` ASC
+--VERSIONE ok 
+SELECT * 
+FROM `students`
+WHERE TIMESTAMPDIFF(year , `date_of_birth` , CURRENT_TIMESTAMP()) > 30
