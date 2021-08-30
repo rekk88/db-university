@@ -2,3 +2,14 @@
 SELECT COUNT(`enrolment_date`) AS `numero_iscritti` , `enrolment_date`  
 FROM `students`
 GROUP BY `enrolment_date`
+
+---------------------- 2 ------------------
+SELECT COUNT(`office_address`) , `office_address`
+FROM `teachers`
+GROUP BY `office_address`
+
+---------------------- 3 ------------------
+SELECT AVG(`vote`) , `exam_id`
+FROM `exam_student` 
+GROUP BY `exam_id`  
+ORDER BY `exam_student`.`exam_id` ASC
