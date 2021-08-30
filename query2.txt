@@ -1,7 +1,7 @@
 ---------------------- 1 ------------------
-SELECT COUNT(`enrolment_date`) AS `numero_iscritti` , `enrolment_date`  
+SELECT COUNT(*) AS `numero_iscritti` , YEAR(`enrolment_date`)  
 FROM `students`
-GROUP BY `enrolment_date`
+GROUP BY YEAR(`enrolment_date`)
 
 ---------------------- 2 ------------------
 SELECT COUNT(`office_address`) , `office_address`
@@ -41,4 +41,4 @@ SELECT `courses`.`name` , `teachers`.`name` ,  `teachers`.`surname`
 FROM `courses`
 JOIN `course_teacher` ON `courses`.`id` = `course_teacher`.`course_id`
 JOIN `teachers` ON `course_teacher`.`teacher_id` = `teachers`.`id`
-WHERE `teachers`.`name` = 'Fulvio'
+WHERE `teachers`.`name` = 'Fulvio' AND `teachers`.`surname` = 'Amato'
